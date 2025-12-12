@@ -2,17 +2,6 @@ import torch
 import torch.nn as nn
 
 
-# def get_default_params(train_dataset):
-#     # Model parameters
-#     user_features_dim = len(train_dataset.history_embeddings_cols) + 1  # +1 for history length
-#     text_embedding_dim = len(train_dataset.text_embeddings_cols)
-#     subcategory_num = train_dataset.items['subcategory'].nunique()
-#     return {
-#         'user_features_dim': user_features_dim, 
-#         'text_embedding_dim': text_embedding_dim, 
-#         'subcategory_num': subcategory_num
-#     }
-
 class TwoTowerModel(nn.Module):
     def __init__(
             self,

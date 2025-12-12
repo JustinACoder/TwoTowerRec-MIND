@@ -22,10 +22,6 @@ class RecommendationDataset(Dataset):
         self.history_embeddings_cols = [c for c in self.users.columns if c.startswith("history_embedding_")]
         self.text_embeddings_cols = [c for c in self.items.columns if c.startswith("text_embedding_")]
 
-        # Map the embeddings from string to list of floats
-        # self.users['history_embedding'] = self.users['history_embedding'].progress_apply(literal_eval)
-        # self.items['text_embedding'] = self.items['text_embedding'].progress_apply(literal_eval)
-
         # Precompute things
         hist_emb_matrix = self.users[self.history_embeddings_cols].to_numpy(dtype=np.float32)
         hist_len = self.users["history_length"].to_numpy(dtype=np.float32).reshape(-1, 1)
