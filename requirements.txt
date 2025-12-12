@@ -2,3 +2,7 @@ numpy
 sentence-transformers
 pandas
 torch
+implicit
+matplotlib
+torchmetrics
+scikit-learn
